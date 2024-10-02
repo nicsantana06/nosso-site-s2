@@ -29,11 +29,10 @@ if (months < 0) {
 // Exibir os resultados
 console.log(${years} Years, ${months} Months, ${days} Days);
 
-console.log(value);
 
-document.getElementById("days").textContent = day.toString();
-document.getElementById("months").textContent = month.toString();
-document.getElementById("years").textContent = year.toString();
+document.getElementById("days").textContent = days.toString();
+document.getElementById("months").textContent = months.toString();
+document.getElementById("years").textContent = years.toString();
 
 
 let musicPlayer = document.querySelector(".music-container");
