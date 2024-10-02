@@ -1,4 +1,4 @@
-let anniversary = "2023-08-30";  // Ajuste a data para o passado
+let anniversary = "2024-08-30";  // Ajuste a data para o passado
 let date = new Date(anniversary);
 let today = new Date();
 
