@@ -27,12 +27,12 @@ if (months < 0) {
 }
 
 // Exibir os resultados
-console.log(${years} Years, ${months} Months, ${days} Days);
-
+console.log(`${years} Years, ${months} Months, ${days} Days`);
 
 document.getElementById("days").textContent = days.toString();
 document.getElementById("months").textContent = months.toString();
 document.getElementById("years").textContent = years.toString();
+
 
 
 let musicPlayer = document.querySelector(".music-container");
