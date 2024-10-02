@@ -1,9 +1,15 @@
-let anniversary = "2024-08-30";
+let anniversary = "2023-08-30";  // Ajuste a data para o passado
 let date = new Date(anniversary);
 let today = new Date();
 
 // Diferença total em milissegundos
 let diffInTime = today.getTime() - date.getTime();
+
+// Se a diferença for negativa, corrija o cálculo
+if (diffInTime < 0) {
+  console.log("A data de aniversário está no futuro. Por favor, defina uma data no passado.");
+  diffInTime = 0;  // Para evitar números negativos
+}
 
 // Converter para dias totais
 let totalDays = Math.floor(diffInTime / (1000 * 60 * 60 * 24));
@@ -32,6 +38,7 @@ console.log(`${years} Years, ${months} Months, ${days} Days`);
 document.getElementById("days").textContent = days.toString();
 document.getElementById("months").textContent = months.toString();
 document.getElementById("years").textContent = years.toString();
+
 
 
 
