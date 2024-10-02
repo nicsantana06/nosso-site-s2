@@ -1,12 +1,33 @@
 let anniversary = "2024-08-30";
 let date = new Date(anniversary);
-let dateVal = date.getTime();
 let today = new Date();
-let now = today.getTime();
-let value = now - dateVal;
-let day = Math.floor(value / (1000 * 60 * 60 * 24));
-let month = Math.floor(value / (1000 * 60 * 60 * 24 * 30.4375));
-let year = Math.floor(value / (1000 * 60 * 60 * 24 * 365.25));
+
+// Diferença total em milissegundos
+let diffInTime = today.getTime() - date.getTime();
+
+// Converter para dias totais
+let totalDays = Math.floor(diffInTime / (1000 * 60 * 60 * 24));
+
+// Calcular o número de anos, meses e dias
+let years = today.getFullYear() - date.getFullYear();
+let months = today.getMonth() - date.getMonth();
+let days = today.getDate() - date.getDate();
+
+// Ajuste para o caso em que o dia atual é menor que o dia do mês do aniversário
+if (days < 0) {
+  months--;
+  let lastMonth = new Date(today.getFullYear(), today.getMonth(), 0).getDate(); // Último dia do mês anterior
+  days += lastMonth;
+}
+
+// Ajuste para o caso em que o mês atual é menor que o mês do aniversário
+if (months < 0) {
+  years--;
+  months += 12;
+}
+
+// Exibir os resultados
+console.log(${years} Years, ${months} Months, ${days} Days);
 
 console.log(value);
 
